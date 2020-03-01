@@ -4,19 +4,6 @@ import axios from "axios";
 const ResourceList = ({resource}) => {
     const [resources, setResources] = useState([]);
 
-    // const fetchResource = async (resource) => {
-    //     const response = await axios.get(`https://jsonplaceholder.typicode.com/${resource}`);
-    //
-    //     setResources(response.data);
-    // };
-
-    // must use a cleanup function or nothing
-    // putting a direct async function as the 1st arg is not allowed
-    // useEffect(() => {
-    //     fetchResource(resource);
-    // }, [resource]);
-
-    // another option
     useEffect(
         () => {
             (async (resource) => {
@@ -27,7 +14,11 @@ const ResourceList = ({resource}) => {
         }, [resource]
     );
 
-    return <div>{resources.length}</div>
+    return (
+        <ul>
+            {resources.map(record => <li key={record.id}>{record.title}</li>)}
+        </ul>
+    );
 };
 
 export default ResourceList;
