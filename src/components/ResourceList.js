@@ -7,12 +7,12 @@ const ResourceList = ({resource}) => {
     const fetchResource = async (resource) => {
         const response = await axios.get(`https://jsonplaceholder.typicode.com/${resource}`);
 
-        setResources(response.data)
+        setResources(response.data);
     };
 
     useEffect(() => {
         fetchResource(resource);
-    }, []);
+    }, [resource]);
 
     return <div>{resources.length}</div>
 };
