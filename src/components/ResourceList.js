@@ -18,3 +18,27 @@ const ResourceList = ({resource}) => {
 };
 
 export default ResourceList;
+
+// // useEffect called or not called on second render
+// useEffect(() => {});
+// useEffect(() => {}); // called
+//
+// useEffect(() => {}, []);
+// useEffect(() => {}, []); // not called
+//
+// useEffect(() => {}, [1]);
+// useEffect(() => {}, [1]); // not called
+//
+// useEffect(() => {}, ['hi']);
+// useEffect(() => {}, [1]); // called
+//
+// useEffect(() => {}, [{color: 'red'}]);
+// useEffect(() => {}, [{color: 'red'}]); // called because passing another object in js is a different object in memory
+//
+// useEffect(() => {}, [10, 10]);
+// useEffect(() => {}, [10, 10]); // not called
+//
+// useEffect(() => {}, [10]);
+// useEffect(() => {}, [10, 10]); // called
+
+
